@@ -1,3 +1,11 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +13,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
+
 }
 
 code {
@@ -15,4 +25,24 @@ code {
 
 .form{
   max-width: 10em;
+}
+
+.github{
+  color: black;
+}
+
+footer{
+  margin-top: auto;
+}
+
+.home{
+  margin-left: 9em !important;   
+}
+
+.bolt{
+  top: 10em !important;
+}
+
+.linkin{
+  left: 10px !important;
 }
