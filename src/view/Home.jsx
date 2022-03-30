@@ -34,7 +34,7 @@ const Home = ({handleCreate, workouts, handleDelete}) => {
                 return(
                     <div className='site-card-border-less-wrapper' key={workout.id}>
                      <Card title='Lift' bordered={true} style={{ width: 200 }}>
-                    <p>Lift: {workout.lift}</p>  
+                    <p>{workout.lift}</p>  
                     <p>Weight: {workout.weight}</p>  
                     <p>Reps: {workout.reps}</p>  
                     <p>PR: {workout.pr.toString()}</p> 
