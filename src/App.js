@@ -9,48 +9,49 @@ function App() {
 
   let [workouts, setWorkouts] =useState([])
 
-  const getWorkouts = () =>{
-      axios 
-          .get('http://localhost:3000/lift')
-          .then(
-              (response) => setWorkouts(response.data),
-              (err) => console.log(err)
-          )
-          .catch((error) => console.log(error))
-  }
+  const getWorkouts = () => {
+    axios
+      .get('http://localhost:3000/lift')
+      .then(
+        (response) => setWorkouts(response.data),
+        (err) => console.error(err)
+      )
+      .catch((error) => console.error(error))
+   }
 
-  const handleDelete = (workout) => {
-    axios 
-        .delete(`http://localhost:3000/lift/${workout._id}`)
-        .then((response) => {
-          // getWorkouts()
-        })
-  }
-
-  
-
-  const handleCreate = (addWorkout) => {
+   const handleCreate = (addWorkout) => {
     axios
         .post('http://localhost:3000/lift', addWorkout)
         .then((response) => {
           console.log(response);
           getWorkouts()
         })
-}
+  }
 
-  useEffect(() => {
+  const handleDelete = (workout) => {
+    axios 
+        .delete(`http://localhost:3000/lift/${workout.id}`)
+        .then((response) => {
+          // getWorkouts()
+        })
+  }
+
+
+   useEffect(() => {
     getWorkouts()
-  }, [])
+   }, [])
 
   return (
+    <>
       <div>
         <Layout>
         <Routes>
             <Route path='/' element={<Home handleCreate={handleCreate} workouts={workouts} handleDelete={handleDelete}/>} />
-            <Route path='/editLift/:id' element={<Edit handleDelete={handleDelete} getWorkouts={getWorkouts} workouts={workouts}/>} />
+            <Route path='/editLift/:id' element={<Edit getWorkouts={getWorkouts} workouts={workouts}/>} />
         </Routes>
         </Layout>
-      </div>
+      </div>    </>
+  
   );
 }
 

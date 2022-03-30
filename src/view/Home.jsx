@@ -12,31 +12,41 @@ import {
 import { 
     Button,
     Card,
+    Carousel,
 } from 'antd';
 
+// function onChange(a, b, c) {
+//     console.log(a, b, c);
+//   }
+  
+//   const contentStyle = {
+//     height: '160px',
+//     color: '#fff',
+//     lineHeight: '160px',
+//     textAlign: 'center',
+//     background: '#364d79',
+//   };
 
 const Home = ({handleCreate, workouts, handleDelete}) => {
-
-
-    
     return (
         <div className='workouts'>
             {workouts.map((workout) => {
                 return(
                     <div className='site-card-border-less-wrapper' key={workout.id}>
                      <Card title='Lift' bordered={true} style={{ width: 200 }}>
-                    <h4>Lift: {workout.lift}</h4>  
+                    <p>Lift: {workout.lift}</p>  
+                    <p>Weight: {workout.weight}</p>  
                     <p>Reps: {workout.reps}</p>  
                     <p>PR: {workout.pr.toString()}</p> 
                    
                     <center>
-                        <Button 
+                    <Button 
                         type='primary' 
                         shape='round' 
                         icon={<EditOutlined/>} 
                         link="/edit">
                         edit
-                        </Button>
+                    </Button>
                     <br />
                     <Button
                         type='primary' 
@@ -45,7 +55,8 @@ const Home = ({handleCreate, workouts, handleDelete}) => {
                         shape='round' 
                         danger>
                         Delete
-                        </Button></center>
+                    </Button>
+                    </center>
                     </Card></div>
                 )
             })}

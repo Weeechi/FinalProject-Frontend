@@ -8,7 +8,9 @@ import {
 
 import { 
     Button,
-    Input
+    Input,
+    InputNumber,
+    Space
 } from 'antd';
 
 export default function Add(props) {
@@ -23,7 +25,6 @@ export default function Add(props) {
             return {
             ...prevWorkout,
             [name]: type === 'checkbox' ? checked : value,
-            [name]: type === 'checkbox' ? 'Yes' : 'No'
           }
         })
     }
@@ -45,6 +46,8 @@ export default function Add(props) {
                 size='small'
                 placeholder='Bench'
                 type='text'
+                name='lift' 
+                value={workout.lift}
                 onChange={handleChange}/>
             <br />
 
@@ -52,12 +55,15 @@ export default function Add(props) {
                 htmlFor='weight'>
                 Weight:
             </label>
+
             <Input 
                 className='form'
                 size='small'
-                placeholder='225 Lbs'
                 type='number' 
+                min={1}
+                max={500}
                 name='weight' 
+                value={workout.weight}
                 onChange={handleChange}/>
 
             <br />
@@ -71,6 +77,7 @@ export default function Add(props) {
                 placeholder='10'
                 type='number' 
                 name='reps' 
+                value={workout.reps}
                 onChange={handleChange}/>
             <br />
             <label
