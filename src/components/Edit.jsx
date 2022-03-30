@@ -8,12 +8,13 @@ import {
 } from 'antd';
 
 
-export default function Edit(getWorkouts, workouts, handleDelete, props) {
+export default function Edit(props) {
 
-  let emptyWorkout = { lift: '', weight: '', reps: '', sets: '', pr: false  }
+  let emptyWorkout = { id: props.id, lift: '', weight: '', reps: '', sets: '', pr: false  }
 
   const [workout, setWorkout] = useState(emptyWorkout)
 
+console.log(props.id);
 
   const handleChange =(event) =>{
     const {name, value, type, checked} = event.target
@@ -27,7 +28,7 @@ export default function Edit(getWorkouts, workouts, handleDelete, props) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.handleUpdate(workouts)
+    props.handleUpdate(workout)
   }
 
 
@@ -38,39 +39,42 @@ export default function Edit(getWorkouts, workouts, handleDelete, props) {
           <form onSubmit={handleSubmit}>
             <label htmlFor='lift'>Lift:</label>
             <Input 
-            className='form'
-            size='small'
-            placeholder='Bench'
-            type='text' 
-            name='lift' 
-            onChange={handleChange}/>
+                className='form'
+                size='small'
+                placeholder='Bench'
+                type='text' 
+                value={workout.lift}
+                name='lift' 
+                onChange={handleChange}/>
             <br />
             <label htmlFor='weight'>Weight:</label>
             <Input 
-            className='form'
-            size='small'
-            placeholder='225'
-            type='number' 
-            name='weight' 
-            onChange={handleChange}/>
+                className='form'
+                size='small'
+                placeholder='225'
+                type='number' 
+                value={workout.weight}
+                name='weight' 
+                onChange={handleChange}/>
             <br />
             <label htmlFor='reps'>Reps:</label>
             <Input 
-            className='form'
-            size='small'
-            placeholder='10'
-            type='number' 
-            name='reps' 
-            onChange={handleChange}/>
+                className='form'
+                size='small'
+                placeholder='10'
+                value={workout.reps}
+                type='number' 
+                name='reps' 
+                onChange={handleChange}/>
             <br />
             <label htmlFor='sets'>Sets:</label>
             <br />
             <label htmlFor='pr'>PR:</label>
             <Input 
-            type='checkbox'
-             name='pr' 
-             checked={workout.pr}
-             onChange={handleChange}/>
+                type='checkbox'
+                name='pr' 
+                checked={workout.pr}
+                onChange={handleChange}/>
             <br />
 
             <input type="submit" />

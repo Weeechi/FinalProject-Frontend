@@ -59,9 +59,8 @@ export default function Add(props) {
             <Input 
                 className='form'
                 size='small'
+                placeholder='225'
                 type='number' 
-                min={1}
-                max={500}
                 name='weight' 
                 value={workout.weight}
                 onChange={handleChange}/>

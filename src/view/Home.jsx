@@ -28,24 +28,25 @@ import {
 //     background: '#364d79',
 //   };
 
-const Home = ({handleCreate, workouts, handleDelete, handleUpdate}) => {
+const Home = ({handleCreate, workouts, handleUpdate}) => {
     return (
         <div className='workouts'>
             {workouts.map((workout) => {
+                console.log(workout);
                 return(
                     <div className='site-card-border-less-wrapper' key={workout.id}>
-                     <Card title='Lift' bordered={true} style={{ width: 200 }}>
-                    <p>{workout.lift}</p>  
+                      <Card className='card' bordered={true} style={{ width: 200 }}>
+                    <center> <p>{workout.lift}</p>  
                     <p>Weight: {workout.weight}</p>  
                     <p>Reps: {workout.reps}</p>  
                     <p>PR: {workout.pr.toString()}</p> 
                    
-                    <center>
-                   <Edit handleUpdate={handleUpdate} id={workout.id} />
+                   
+                   <Edit handleUpdate={handleUpdate} id={workout._id} />
                     <br />
                     <Button
                         type='primary' 
-                        onClick={handleDelete(workout)} 
+                        // onClick={handleDelete(workout)} 
                         icon={<DeleteOutlined/>}
                         shape='round' 
                         danger>

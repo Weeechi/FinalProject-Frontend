@@ -27,18 +27,18 @@ function App() {
         })
   }
 
-  const handleDelete = (workout) => {
-    axios 
-        .delete(`http://localhost:3000/lift/${workout.id}`)
-        .then((response) => {
-          // getWorkouts()
-        })
-  }
+  // const handleDelete = (workout) => {
+  //   axios 
+  //       .delete(`http://localhost:3000/lift/${workout.id}`)
+  //       .then((response) => {
+  //         // getWorkouts()
+  //       })
+  // }
 
   const handleUpdate = (editWorkout) => {
     console.log(editWorkout);
     axios
-        .put('http://localhost:3000/lift' + editWorkout._id, editWorkout)
+        .put('http://localhost:3000/lift/' + editWorkout.id, editWorkout)
         .then((response) =>{
           getWorkouts()
         })
@@ -54,8 +54,7 @@ function App() {
       <div>
         <Layout>
         <Routes>
-            <Route path='/' element={<Home handleCreate={handleCreate} workouts={workouts} handleDelete={handleDelete} handleUpdate={handleUpdate} />} />
-            {/* <Route path='/editLift/:id' element={<Edit getWorkouts={getWorkouts} workouts={workouts}/>} /> */}
+            <Route path='/' element={<Home handleCreate={handleCreate} workouts={workouts} handleUpdate={handleUpdate} />} />
         </Routes>
         </Layout>
       </div>    </>
