@@ -21,3 +21,7 @@ code {
   display: flex !important;
   flex-direction: column !important;
 }
+
+.git{
+  padding-left: 3em;
+}

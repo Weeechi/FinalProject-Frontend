@@ -2,6 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import Add from '../components/Add';
+import Edit from '../components/Edit';
 import {input} from 'antd/dist/antd.css';
 import { 
     DeleteOutlined,
@@ -27,7 +28,7 @@ import {
 //     background: '#364d79',
 //   };
 
-const Home = ({handleCreate, workouts, handleDelete}) => {
+const Home = ({handleCreate, workouts, handleDelete, handleUpdate}) => {
     return (
         <div className='workouts'>
             {workouts.map((workout) => {
@@ -40,13 +41,7 @@ const Home = ({handleCreate, workouts, handleDelete}) => {
                     <p>PR: {workout.pr.toString()}</p> 
                    
                     <center>
-                    <Button 
-                        type='primary' 
-                        shape='round' 
-                        icon={<EditOutlined/>} 
-                        link="/edit">
-                        edit
-                    </Button>
+                   <Edit handleUpdate={handleUpdate} id={workout.id} />
                     <br />
                     <Button
                         type='primary' 

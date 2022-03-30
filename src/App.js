@@ -1,5 +1,4 @@
 import Home from "./view/Home";
-import Edit from "./view/Edit";
 import {Routes, Route} from 'react-router-dom'
 import Layout from "./components/Layout";
 import axios from 'axios'
@@ -36,6 +35,15 @@ function App() {
         })
   }
 
+  const handleUpdate = (editWorkout) => {
+    console.log(editWorkout);
+    axios
+        .put('http://localhost:3000/lift' + editWorkout._id, editWorkout)
+        .then((response) =>{
+          getWorkouts()
+        })
+  }
+
 
    useEffect(() => {
     getWorkouts()
@@ -46,8 +54,8 @@ function App() {
       <div>
         <Layout>
         <Routes>
-            <Route path='/' element={<Home handleCreate={handleCreate} workouts={workouts} handleDelete={handleDelete}/>} />
-            <Route path='/editLift/:id' element={<Edit getWorkouts={getWorkouts} workouts={workouts}/>} />
+            <Route path='/' element={<Home handleCreate={handleCreate} workouts={workouts} handleDelete={handleDelete} handleUpdate={handleUpdate} />} />
+            {/* <Route path='/editLift/:id' element={<Edit getWorkouts={getWorkouts} workouts={workouts}/>} /> */}
         </Routes>
         </Layout>
       </div>    </>
