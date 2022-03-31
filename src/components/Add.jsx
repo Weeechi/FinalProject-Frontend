@@ -84,7 +84,7 @@ export default function Add(props) {
                 checked={workout.pr} 
                 onChange={handleChange}/>
             <br />
-            <input type="submit"/>
+            <input  className='submit' type="submit"/>
         </form>
     </>
   )

@@ -4,11 +4,14 @@ import Header from './Header';
 
 const Layout = (props) => {
     return (
-        <div>
+        <>
+        <div className='wrapper'>
         <Header />
         {props.children}
-        <Footerr />
+        <div className='push'></div>
         </div>
+        <Footerr />
+        </>
     );
 }
 

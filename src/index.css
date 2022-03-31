@@ -6,11 +6,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: radial-gradient( circle farthest-corner at 6.7% 22.9%,  rgba(53,62,75,1) 0%, rgba(187,187,187,1) 96.6% );
-  height: 200% !important;
-  background-size: cover;
-
+  height: 900%;
 }
 
+.wrapper{
+  min-height: 100%;
+  margin-bottom: -20px;
+}
+
+.submit{
+  margin-bottom: .3em;
+}
+
+.footer{
+  height: 100px;
+}
+.push{
+  height: 300px;
+}
+
+.site-card-border-less-wrapper{
+  display: flex;
+  padding: .4em;
+}
 
 .reps, .weight, .lift, .sub, .pr{
   color: #eef1f5;
@@ -41,7 +59,10 @@ code {
 
 .workouts{
   display: flex !important;
-  flex-direction: column !important;
+  flex-direction: row !important;
+  flex-flow: wrap;
+  justify-content:center;
+  
 }
 
  .git{
