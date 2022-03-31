@@ -1,7 +1,7 @@
 import React from 'react';
 import Add from '../components/Add';
 import Edit from '../components/Edit';
-import {input} from 'antd/dist/antd.css';
+import {} from 'antd/dist/antd.css';
 import { 
     DeleteOutlined,
 } from '@ant-design/icons';
