@@ -1,19 +1,14 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
-import axios from 'axios';
 import Add from '../components/Add';
 import Edit from '../components/Edit';
 import {input} from 'antd/dist/antd.css';
 import { 
     DeleteOutlined,
-    EditOutlined,
-    UserOutlined
 } from '@ant-design/icons';
 
 import { 
     Button,
     Card,
-    Carousel,
 } from 'antd';
 
 // function onChange(a, b, c) {

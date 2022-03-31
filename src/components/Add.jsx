@@ -1,16 +1,6 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios'
+import React, {useState} from 'react'
 import { 
-    DeleteOutlined,
-    EditOutlined,
-    UserOutlined,
-} from '@ant-design/icons';
-
-import { 
-    Button,
     Input,
-    InputNumber,
-    Space
 } from 'antd';
 
 export default function Add(props) {

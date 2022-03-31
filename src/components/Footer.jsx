@@ -5,7 +5,7 @@ import {
   GithubOutlined
 } from '@ant-design/icons'
 
-const { Header, Footer, Sider, Content } = Layout;
+const {Footer} = Layout;
 
 export default function Footerr() {
   return (
