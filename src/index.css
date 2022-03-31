@@ -7,11 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 
-  height: 200% !important;
+  height: 100% !important;
   background-size: cover;
 
 }
 
+.footer{
+  margin-top: 43em;
+
+}
 
 
 .card{
