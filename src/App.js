@@ -10,7 +10,7 @@ function App() {
 
   const getWorkouts = () => {
     axios
-      .get('http://localhost:3000/lift')
+      .get('https://prpalbackend.herokuapp.com/lift/')
       .then(
         (response) => setWorkouts(response.data),
         (err) => console.error(err)
@@ -20,7 +20,7 @@ function App() {
 
    const handleCreate = (addWorkout) => {
     axios
-        .post('http://localhost:3000/lift', addWorkout)
+        .post('https://prpalbackend.herokuapp.com/lift', addWorkout)
         .then((response) => {
           console.log(response);
           getWorkouts()
@@ -29,7 +29,7 @@ function App() {
 
   const handleDelete = (workout) => {
     axios 
-        .delete('http://localhost:3000/lift/' + workout._id)
+        .delete('https://prpalbackend.herokuapp.com/lift/' + workout._id)
         .then((response) => {
           getWorkouts()
         })
@@ -38,7 +38,7 @@ function App() {
   const handleUpdate = (editWorkout) => {
     // console.log(editWorkout);
     axios
-        .put('http://localhost:3000/lift/' + editWorkout.id, editWorkout)
+        .put('https://prpalbackend.herokuapp.com/lift/' + editWorkout.id, editWorkout)
         .then((response) =>{
           getWorkouts()
         })
