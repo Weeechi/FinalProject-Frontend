@@ -14,7 +14,7 @@ export default function Edit(props) {
 
   const [workout, setWorkout] = useState(emptyWorkout)
 
-console.log(props.id);
+// console.log(props.id);
 
   const handleChange =(event) =>{
     const {name, value, type, checked} = event.target

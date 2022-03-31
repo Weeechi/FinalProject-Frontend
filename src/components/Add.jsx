@@ -29,7 +29,7 @@ export default function Add(props) {
         })
     }
 
-    console.log(props);
+    // console.log(props);
     
 
     const handleSubmit = (event) => {

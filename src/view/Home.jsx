@@ -28,7 +28,7 @@ import {
 //     background: '#364d79',
 //   };
 
-const Home = ({handleCreate, workouts, handleUpdate}) => {
+const Home = ({handleCreate, workouts, handleUpdate, handleDelete}) => {
     return (
         <div className='workouts'>
             {workouts.map((workout) => {
@@ -42,11 +42,13 @@ const Home = ({handleCreate, workouts, handleUpdate}) => {
                     <p>PR: {workout.pr.toString()}</p> 
                    
                    
-                   <Edit handleUpdate={handleUpdate} id={workout._id} />
+                   <Edit handleUpdate={handleUpdate} 
+                   id={workout._id} />
                     <br />
                     <Button
                         type='primary' 
-                        // onClick={handleDelete(workout)} 
+                        onClick={ () => {handleDelete(workout)}} 
+                        value={workout._id}
                         icon={<DeleteOutlined/>}
                         shape='round' 
                         danger>
