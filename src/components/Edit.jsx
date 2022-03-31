@@ -62,15 +62,14 @@ export default function Edit(props) {
                 type='number' 
                 name='reps' 
                 onChange={handleChange}/>
+
             <br />
-            <label htmlFor='sets'>Sets:</label>
-            <br />
-            <label htmlFor='pr'>PR:</label>
-            <Input 
+            <label htmlFor='pr'>PR:</label> <Input 
                 type='checkbox'
                 name='pr' 
                 checked={workout.pr}
                 onChange={handleChange}/>
+           
             <br />
 
             <input type="submit" />

@@ -10,8 +10,9 @@ export default function header() {
   return (
     <div className='container-fluid'>
         <div className='logo'>
-        <Header className='header' style={{ textAlign: 'center' }}>
-          <h1 className='title'>PR Pal <FireOutlined style={{fontSize:'25px', color:'white'}}/> </h1> 
+        <Header className='header' style={{ textAlign: 'center'  }}>
+          <h1 className='title'>PR Pal <FireOutlined 
+          style={{fontSize:'25px', color:'white'}}/> </h1> 
 
         </Header>
         </div>

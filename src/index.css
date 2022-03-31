@@ -5,19 +5,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-image: radial-gradient( circle farthest-corner at 6.7% 22.9%,  rgba(53,62,75,1) 0%, rgba(187,187,187,1) 96.6% );
   height: 200% !important;
   background-size: cover;
 
 }
 
 
-
+.reps, .weight, .lift, .sub, .pr{
+  color: #eef1f5;
+}
 .card{
   background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%) !important;
   display: flex;
   flex-direction: column;
   align-items: center !important;
+  /* margin-top: 4em; */
 } 
 
 code {
@@ -25,6 +28,12 @@ code {
     monospace;
 }
 
+
+.sub{
+  font-size: 20px;
+  margin-top: .5em;
+  margin-bottom: 1em;
+}
 
 .form{
   max-width: 10em;

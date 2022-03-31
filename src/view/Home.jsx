@@ -25,6 +25,10 @@ import {
 
 const Home = ({handleCreate, workouts, handleUpdate, handleDelete}) => {
     return (
+        <>
+        <center><h1 className='sub'>Log All Your Strongest Lifts</h1>
+        <Add className='add' handleCreate={handleCreate}/>
+        </center>
         <div className='workouts'>
             {workouts.map((workout) => {
                 console.log(workout);
@@ -54,9 +58,9 @@ const Home = ({handleCreate, workouts, handleUpdate, handleDelete}) => {
                 )
             })}
         
-            <Add handleCreate={handleCreate}/>
         
         </div>
+        </>
     );
 }
 

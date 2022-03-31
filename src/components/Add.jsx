@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { 
+    Alert,
     Input,
 } from 'antd';
 
@@ -30,7 +31,10 @@ export default function Add(props) {
   return (
     <>
         <form onSubmit={handleSubmit}>
-             <label htmlFor='lift'>Lift:</label>
+             <label 
+            className='lift' 
+            htmlFor='lift'>
+            Lift: </label><br />
             <Input 
                 className='form'
                 size='small'
@@ -42,9 +46,9 @@ export default function Add(props) {
             <br />
 
             <label 
+                className='weight'
                 htmlFor='weight'>
-                Weight:
-            </label>
+                Weight: </label><br />
 
             <Input 
                 className='form'
@@ -57,9 +61,10 @@ export default function Add(props) {
 
             <br />
             <label 
+                 className='reps'
                 htmlFor='reps'>
                 Reps:
-                </label>
+                </label><br />
             <Input 
                 className='form'
                 size='small'
@@ -70,6 +75,7 @@ export default function Add(props) {
                 onChange={handleChange}/>
             <br />
             <label
+                className='pr'
                 htmlFor='pr'>
                 PR:
                 </label>
@@ -79,7 +85,6 @@ export default function Add(props) {
                 checked={workout.pr} 
                 onChange={handleChange}/>
             <br />
-
             <input type="submit"/>
         </form>
     </>
