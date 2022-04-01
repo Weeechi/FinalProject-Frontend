@@ -5,8 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: radial-gradient( circle farthest-corner at 6.7% 22.9%,  rgba(53,62,75,1) 0%, rgba(187,187,187,1) 96.6% );
-  height: 900%;
+  background: radial-gradient( circle farthest-corner at 6.7% 22.9%,  rgba(53,62,75,1) 0%, rgba(187,187,187,1) 96.6% ) no-repeat;
+  background-size: cover;
+  min-height: 100%;
+
+}
+
+html{
+  min-height: 130%;
+
 }
 
 .wrapper{
@@ -20,9 +27,11 @@ body {
 
 .footer{
   height: 100px;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%) !important;
+
 }
 .push{
-  height: 300px;
+  /* height: 300px; */
 }
 
 .site-card-border-less-wrapper{
@@ -30,7 +39,9 @@ body {
   padding: .4em;
 }
 
-.reps, .weight, .lift, .sub, .pr{
+.reps, .weight, .lift, .sub, .pr, .card
+{
+  font-family:Verdana, Geneva, Tahoma, sans-serif; 
   color: #eef1f5;
 }
 .card{
@@ -61,8 +72,7 @@ code {
   display: flex !important;
   flex-direction: row !important;
   flex-flow: wrap;
-  justify-content:center;
-  
+  justify-content:center;  
 }
 
  .git{
