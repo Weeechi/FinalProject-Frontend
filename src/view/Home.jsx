@@ -29,6 +29,7 @@ const Home = ({handleCreate, workouts, handleUpdate, handleDelete}) => {
         <>
         <center><h1 className='sub'>Log All Your Strongest Lifts</h1>
         <Add className='add' handleCreate={handleCreate}/>
+        <br />
         </center>
         <div className='workouts'>
             {workouts.map((workout) => {

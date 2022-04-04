@@ -3,6 +3,20 @@ import {Routes, Route} from 'react-router-dom'
 import Layout from "./components/Layout";
 import axios from 'axios'
 import {useEffect, useState} from 'react'
+import { 
+  notification
+} from 'antd';
+
+
+const openNotification = () => {
+  notification.open({
+    message: 'Lift Deleted',
+    onClick: () => {
+      console.log('Notification Clicked!');
+    },
+  });
+};
+
 
 function App() {
 
@@ -33,6 +47,7 @@ function App() {
         .then((response) => {
           getWorkouts()
         })
+        openNotification()
   }
 
   const handleUpdate = (editWorkout) => {

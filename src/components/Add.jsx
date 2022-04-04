@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { 
     Input,
+    notification
 } from 'antd';
 
 export default function Add(props) {
@@ -19,13 +20,20 @@ export default function Add(props) {
         })
     }
 
-    // console.log(props);
-    
-
     const handleSubmit = (event) => {
         event.preventDefault()
         props.handleCreate(workout)
     }
+
+    const openNotification = () => {
+        notification.open({
+          message: 'Lift Created',
+          onClick: () => {
+            console.log('Notification Clicked!');
+          },
+        });
+      };
+
 
   return (
     <>
@@ -84,7 +92,10 @@ export default function Add(props) {
                 checked={workout.pr} 
                 onChange={handleChange}/>
             <br />
-            <input  className='submit' type="submit"/>
+            <input  
+            className='submit'
+             type="submit"
+             onClick={openNotification}/>
         </form>
     </>
   )
