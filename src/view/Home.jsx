@@ -7,8 +7,9 @@ import {
 } from '@ant-design/icons';
 
 import { 
+    BackTop,
     Button,
-    Card,
+    Card
 } from 'antd';
 
 // function onChange(a, b, c) {
@@ -58,10 +59,14 @@ const Home = ({handleCreate, workouts, handleUpdate, handleDelete}) => {
                 )
             })}
         
-        
+
+    <BackTop />
+
         </div>
         </>
     );
 }
 
 export default Home;
+
+

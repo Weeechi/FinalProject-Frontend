@@ -76,8 +76,8 @@ export default function Add(props) {
             <label
                 className='pr'
                 htmlFor='pr'>
-                PR:
-                </label>
+                PR: 
+                </label>  
             <input 
                 type='checkbox' 
                 name='pr' 
